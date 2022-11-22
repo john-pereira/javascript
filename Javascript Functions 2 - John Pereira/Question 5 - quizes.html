@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/question5.js"></script>
+</head>
+<body>
+            <h1 class="text-center">Question 5</h1>
+
+            <form class="col-md-3 mt-3 mx-auto p-3 shadow rounded" id="formGetNumberOfQuizzes">
+
+                <div class="form-group">
+                 <label for="numQuizzes" class="form-label">How many quizzes?</label>
+                 <input type="text" class="form-control" id="numQuizzes">
+                 <input type="button" 
+                        class="btn btn-primary my-3 col-12" 
+                        id="btnShowFormWithQuizzes" 
+                        value="PROCEED">
+                </div>
+
+            </form>
+
+            <form class="col-md-3 mt-3 mx-auto p-3 shadow rounded d-none" id="formWithQuizzes">
+
+                <input type="button"
+                        class="btn btn-primary col-12 mb-3"
+                        id="btnCalculateAverageAndGrade"
+                        value="Calculate Average and Grade">
+
+                <div class="form-group row mb-3">
+                    <label for="average" class="col-from-label col-4">Average</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="average" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="grade" class="col-from-label col-4">Grade</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="grade" readonly>
+                    </div>
+                </div>
+
+            </form>
+
+   <script>
+    let numQuizzes = 0;
+    document.querySelector("#btnShowFormWithQuizzes").addEventListener("click", function(){
+        numQuizzes = document.querySelector("#numQuizzes").value;
+        const formWithQuizzes = document.querySelector("#formWithQuizzes");
+        const btnCalculateAverageAndGrade = document.querySelector("#btnCalculateAverageAndGrade");
+        const quizIDPrefix = "quiz";
+
+        let quizFormGroup = "";
+
+        document.querySelector("#formWithQuizzes").classList.remove("d-none");
+        document.querySelector("#formGetNumberOfQuizzes").classList.add("d-none");
+
+        for(let count = 1; count <= numQuizzes; count++){
+            quizFormGroup = createQuizFormGroup(quizIDPrefix+count);
+            formWithQuizzes.insertBefore(quizFormGroup, btnCalculateAverageAndGrade);
+        }
+    });
+
+    document.querySelector("#btnCalculateAverageAndGrade").addEventListener("click", function(){
+        let sum = 0;
+        let quizid = "";
+        
+        for(let count = 0; count < numQuizzes; count++){
+            quizid="#quiz"+(count+1);
+            sum += Number(document.querySelector(quizid).value);
+        }
+
+        const average = sum/numQuizzes;
+
+        document.querySelector("#average").value = average.toFixed(2);
+        document.querySelector("#grade").value = getGrade(average);
+    });
+
+
+   </script>
+    
+    <script src="js/bootstrap.js"></script>
+    
+</body>
+</html>

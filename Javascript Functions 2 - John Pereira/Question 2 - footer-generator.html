@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Generator</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-blue">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+          <div class="col-auto">
+            <h1>Question 2</h1>
+            <h1>Let's generate a footer</h1>
+            <form onsubmit="event.preventDefault();" name="form" method="POST">
+                <div class="mb-3">
+                 <label for="companyInput" class="form-label">Company Name:</label>
+                 <input type="text" class="form-control" id="companyInput" aria-describedby="comapanyInput">
+                </div>
+                
+                
+                <button class="btn btn-primary col-md-12"
+                onclick="footerGenerator()">
+                  Generate</button>
+              </form>
+          </div>
+        </div>
+    </div>
+   <footer >
+    <div class="container ">
+       <p >© <span id="currentYear"></span> - <span id="companyName"></span> All rights reserved</p>
+    </div>
+   </footer>
+    
+    <script src="js/bootstrap.js"></script>
+    <script src="js/generateFooter.js"></script>
+</body>
+</html>

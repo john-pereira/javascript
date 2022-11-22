@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Cards</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+          <div class="col-auto">
+            <h1>Question 4</h1>
+            <h1>Pizza Cards</h1>
+
+            <div class="container">
+                <nav class="navbar navbar-light bg-light">
+                  <form class="form-inline" id="formItem" action="#">
+                  </form>
+                </nav>
+                <div class="row" id="shop">
+                </div>
+              </div>
+            <script>
+                var items = [
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ['Supreme', '$15.00', 'pizza.jpg'],
+                    ]
+
+                    let content = '';
+
+                    items.forEach(p => {
+                    content += `
+                                <div id="keyBoard" class="col-md-3 mt-2">
+                                    <div class="card" style="width: 14rem;">
+                                        <img src="${p[2]}" class="card-img-top img-fluid" alt="keyboard">
+                                        <div class="card-body">
+                                            <h5 class="card-title" id="itemName">${p[0]}</h5>
+                                            <p class="card-text">${p[1]}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                `
+                    });
+
+                    document.querySelector("#shop").innerHTML = content;
+
+            </script>
+          </div>
+        </div>
+    </div>
+   
+    
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

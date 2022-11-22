@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odds and Evens</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+          <div class="col-auto">
+            <h1>Question 3</h1>
+
+
+            <p class="odd">Number 1</p>
+            <p class="even">Number 2</p>
+            <p class="odd">Number 3</p>
+            <p class="even">Number 4</p>
+            <p class="odd">Number 5</p>
+            <p class="even">Number 6</p>
+            
+            <script>
+            const odd = document.getElementById('odd');
+            const even = document.getElementById('even');
+
+            const allParagraphs = document.querySelectorAll("p");
+           
+                
+            for( paragraph of allParagraphs){
+                paragraph.style.backgroundColor = paragraph.getAttribute("class")==="odd" ? "yellow" : "lightblue";
+            }
+                
+
+            </script>
+          </div>
+        </div>
+    </div>
+   
+    
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
