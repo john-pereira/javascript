@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit card application form</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+          <div class="col-auto">
+            <h1>It will calculate your age</h1>
+            <form onsubmit="event.preventDefault();" name="form" method="POST">
+                <div class="mb-3">
+                 <label for="firstName" class="form-label">Birthday:</label>
+                 <input type="date" class="form-control" id="birthday" aria-describedby="firstNameHelp">
+                 <small id="msg-birthday" class="text-success"></small>
+                </div>
+                
+                
+                <button class="btn btn-primary col-md-12"
+                onclick="getAge()">
+                    Submit</button>
+              </form>
+          </div>
+        </div>
+    </div>
+   
+    
+    <script src="js/bootstrap.js"></script>
+    <script src="js/calculateAge.js"></script>
+</body>
+</html>
